@@ -28,6 +28,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="xHY-ED-uQF"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="37U-qx-7TW"/>
                                     <barButtonItem title="Gallary" id="gOt-wb-ruR">
                                         <connections>
                                             <action selector="Gallary:" destination="BYZ-38-t0r" id="8Lf-gu-xOu"/>
@@ -51,9 +52,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="Gallary" destination="qww-QK-6Fk" id="fOD-c1-AhS"/>
-                        <outlet property="Image" destination="1Ha-vl-41D" id="QdG-1E-T3s"/>
-                        <outlet property="image" destination="1Ha-vl-41D" id="wuN-8c-zff"/>
+                        <outlet property="Imgview" destination="1Ha-vl-41D" id="aom-cR-1Dz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -8,10 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController , UIViewImagePickerControllerDelegate, UINavigationController
+class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
-
-    override func viewDidLoad() {
+   override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -19,7 +18,7 @@ class ViewController: UIViewController , UIViewImagePickerControllerDelegate, UI
 
     
     
-    @IBAction func Gallary(_ sender: Any)
+    @IBAction func Gallary(_ sender: UIBarButtonItem)
     {
         
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
@@ -27,9 +26,10 @@ class ViewController: UIViewController , UIViewImagePickerControllerDelegate, UI
             myPickerController.delegate = self;
             myPickerController.sourceType = .photoLibrary
             self.present(myPickerController, animated: true, completion: nil)
-        }
-    }
-        @IBAction func Camera(_ sender: Any)
+            
+    
+        }}
+    @IBAction func Camera(_ sender: UIBarButtonItem)
     {
     if UIImagePickerController.isSourceTypeAvailable(.camera)
     {
@@ -37,14 +37,17 @@ class ViewController: UIViewController , UIViewImagePickerControllerDelegate, UI
         myPickerController.delegate = self;
     myPickerController.sourceType = .camera
     self.present(myPickerController, animated: true, completion: nil)
-    }    }
-
-}   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-        self.imagePickedBlock?(image)
+    }
+        
+    }
+    
+    @IBOutlet weak var Imgview: UIImageView!
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    if let image=info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+        self.Imgview.image=image
     }else{
         print("Something went wrong")
     }
     self.dismiss(animated: true, completion: nil)
 }
-
+}
